@@ -1,0 +1,25 @@
+name: Bug report
+description: Report unclear, incorrect, or incompatible skill instructions.
+body:
+  - type: markdown
+    attributes:
+      value: Do not include secrets, private repository content, or personal data. Report security concerns privately through the Security tab.
+  - type: input
+    id: skill
+    attributes:
+      label: Skill or file and repository revision
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Codex client, version, and operating system
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Sanitized reproduction
+      description: Include the expected behavior, actual behavior, and available tools.
+    validations:
+      required: true

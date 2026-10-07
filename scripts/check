@@ -1,0 +1,315 @@
+#!/usr/bin/env python3
+"""Check repository packaging locally, without dependencies or external effects."""
+
+import json
+import re
+import shutil
+import sys
+import tempfile
+from pathlib import Path, PurePosixPath
+from urllib.parse import unquote, urlsplit
+
+
+ROOT = Path(__file__).resolve().parent.parent
+NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+SHA = re.compile(r"[0-9a-f]{40}")
+# This repository uses inline links. Fenced code is excluded, and link titles
+# and angle-wrapped destinations are supported. Fragment contents are not checked.
+LINK = re.compile(r"\[[^\]\n]*\]\(\s*(<[^>\n]+>|[^\s)]+)(?:\s+\"[^\"\n]*\")?\s*\)")
+errors = []
+
+
+def require(condition, message):
+    if not condition:
+        errors.append(message)
+
+
+def source_text(path, boundary=ROOT):
+    if not path.resolve().is_relative_to(boundary.resolve()):
+        raise ValueError(f"{path.name}: source path escapes repository")
+    return path.read_text(encoding="utf-8")
+
+
+def load_json(relative):
+    try:
+        document = json.loads(source_text(ROOT / relative))
+    except (OSError, UnicodeError, ValueError) as error:
+        raise ValueError(f"{relative}: {error}") from error
+    if not isinstance(document, dict):
+        raise ValueError(f"{relative}: expected a JSON object")
+    return document
+
+
+def records(document, key, context):
+    entries = document.get(key)
+    if not isinstance(entries, list) or not entries:
+        raise ValueError(f"{context}: {key} must be a nonempty JSON array")
+    if not all(isinstance(entry, dict) for entry in entries):
+        raise ValueError(f"{context}: every {key} entry must be a JSON object")
+    return entries
+
+
+def local_path(relative, context):
+    if not isinstance(relative, str) or not relative:
+        require(False, f"{context}: expected a nonempty repository-relative path")
+        return None
+    path = PurePosixPath(relative)
+    if path.is_absolute() or ".." in path.parts or "\\" in relative:
+        require(False, f"{context}: unsafe path {relative!r}")
+        return None
+    target = ROOT / relative
+    require(target.is_file(), f"{context}: missing file {relative}")
+    require(target.resolve().is_relative_to(ROOT), f"{context}: path escapes repository: {relative}")
+    return target
+
+
+def markdown_links(text):
+    fence = None
+    for number, line in enumerate(text.splitlines(), 1):
+        marker = re.match(r"^\s{0,3}(`{3,}|~{3,})", line)
+        if marker:
+            token = marker.group(1)
+            if fence is None:
+                fence = token
+            elif token[0] == fence[0] and len(token) >= len(fence):
+                fence = None
+            continue
+        if fence is None:
+            for match in LINK.finditer(line):
+                yield number, match.group(1).strip("<>")
+
+
+def check_links(path, boundary):
+    boundary = boundary.resolve()
+    if not path.resolve().is_relative_to(boundary):
+        require(False, f"{path.name}: Markdown source path escapes repository")
+        return
+    for number, destination in markdown_links(source_text(path, boundary)):
+        parts = urlsplit(destination)
+        if parts.scheme or parts.netloc or not parts.path:
+            continue
+        target = (path.resolve().parent / unquote(parts.path)).resolve()
+        label = f"{path.resolve().relative_to(boundary)}:{number}"
+        require(target.is_relative_to(boundary), f"{label}: local link escapes repository: {destination}")
+        require(target.exists(), f"{label}: broken local link: {destination}")
+
+
+def frontmatter(path):
+    lines = source_text(path).splitlines()
+    label = str(path.relative_to(ROOT))
+    if not lines or lines[0] != "---" or "---" not in lines[1:]:
+        require(False, f"{label}: missing frontmatter delimiters")
+        return {}
+    fields = {}
+    for line in lines[1:lines[1:].index("---") + 1]:
+        if not line.strip():
+            continue
+        key, separator, value = line.partition(":")
+        if not separator or key in fields:
+            require(False, f"{label}: invalid or duplicate frontmatter field: {line}")
+            continue
+        fields[key] = value.strip()
+    name = fields.get("name", "")
+    require(bool(NAME.fullmatch(name)) and len(name) <= 64, f"{label}: name must be kebab-case and at most 64 characters")
+    require(name == path.parent.name, f"{label}: name does not match its directory")
+    raw = fields.get("description", "")
+    try:
+        description = json.loads(raw)
+        require(isinstance(description, str) and bool(description.strip()) and len(description) <= 1024,
+                f"{label}: description must be a nonempty quoted string of at most 1024 characters")
+    except ValueError:
+        require(False, f"{label}: description must be a JSON-compatible double-quoted string")
+    return fields
+
+
+def check_catalog(catalog, inventory):
+    require(catalog.get("schema_version") == 1, "provenance/catalog.json: unsupported schema_version")
+    require(catalog.get("kind") == "repository-source-distribution", "catalog kind must describe source distribution")
+    for key in ("installed", "native_tools_added"):
+        require(catalog.get(key) is False, f"catalog {key} must be false")
+    require(catalog.get("source") == inventory.get("source"), "catalog and inventory source metadata differ")
+    source = catalog.get("source", {})
+    require(bool(SHA.fullmatch(source.get("revision", ""))), "source revision must be a full Git SHA")
+    require(source.get("license") == "MIT", "source license must be MIT")
+    for key in ("shared_contract", "adapter"):
+        local_path(catalog.get(key), f"catalog {key}")
+    groups = {
+        "skills": set(ROOT.glob("skills/*/SKILL.md")),
+        "workflows": set(ROOT.glob("workflows/*.md")),
+        "operational_procedures": set(ROOT.glob("integrations/benny/procedures/*/PROCEDURE.md")),
+    }
+    all_ids = set()
+    all_paths = set()
+    mapped = {path for entry in inventory["files"] for path in entry["adapted_paths"]}
+    upstream = {entry["source_path"]: entry for entry in inventory["files"]}
+    catalog_links = [destination for _, destination in markdown_links(source_text(ROOT / "CATALOG.md"))]
+    documented = set(catalog_links)
+    entry_links = [path for path in catalog_links if path.startswith(("skills/", "workflows/", "integrations/benny/procedures/"))]
+    require(len(entry_links) == len(set(entry_links)), "CATALOG.md: duplicate entry targets")
+    for group, actual in groups.items():
+        entries = records(catalog, group, "provenance/catalog.json")
+        paths = set()
+        for entry in entries:
+            identifier, relative = entry.get("id", ""), entry.get("path", "")
+            context = f"catalog {group} {identifier!r}"
+            require(bool(NAME.fullmatch(identifier)), f"{context}: invalid id")
+            require(identifier not in all_ids, f"{context}: duplicate id")
+            require(relative not in all_paths, f"{context}: duplicate path {relative}")
+            all_ids.add(identifier)
+            all_paths.add(relative)
+            target = local_path(relative, context)
+            if target:
+                paths.add(target)
+                expected_id = target.parent.name if group != "workflows" else target.stem
+                if group == "operational_procedures":
+                    expected_id = "pstack-" + expected_id
+                require(identifier == expected_id, f"{context}: id does not match path")
+            require(relative in documented, f"{context}: missing from CATALOG.md")
+            require(relative in mapped, f"{context}: no upstream inventory mapping")
+            if group == "skills":
+                original = upstream.get(entry.get("source_path"))
+                require(original is not None, f"{context}: source_path missing from inventory")
+                if original:
+                    require(entry.get("source_blob_sha") == original["blob_sha"], f"{context}: source hash differs from inventory")
+                    require(relative in original["adapted_paths"], f"{context}: source mapping differs from inventory")
+                capabilities = entry.get("capabilities")
+                require(isinstance(capabilities, list) and bool(capabilities) and all(isinstance(value, str) and bool(value.strip()) for value in capabilities),
+                        f"{context}: capabilities must be a nonempty array of nonempty strings")
+            elif group == "operational_procedures":
+                require(entry.get("enabled") is False, f"{context}: procedures must remain disabled")
+            else:
+                requirements = entry.get("requires")
+                valid = isinstance(requirements, list) and bool(requirements) and all(isinstance(value, str) and bool(value.strip()) for value in requirements)
+                require(valid, f"{context}: requires must be a nonempty array of nonempty strings")
+                if not valid:
+                    continue
+                expected = {catalog["shared_contract"], catalog["adapter"]}
+                require(set(requirements) == expected and len(requirements) == len(expected), f"{context}: requires must name exactly the shared contract and adapter")
+                for required in requirements:
+                    local_path(required, context)
+        require(paths == actual, f"catalog {group}: file mismatch; missing={sorted(str(p.relative_to(ROOT)) for p in actual - paths)}, extra={sorted(str(p.relative_to(ROOT)) for p in paths - actual)}")
+    expected = {str(p.relative_to(ROOT)) for paths in groups.values() for p in paths}
+    listed = {path for path in documented if path.startswith(("skills/", "workflows/", "integrations/benny/procedures/"))}
+    require(listed == expected, "CATALOG.md: entry targets differ from the distributed files")
+    roles = set(ROOT.glob("roles/*.md"))
+    require(bool(roles), "roles: no role profiles found")
+    for role in roles:
+        require(str(role.relative_to(ROOT)) in mapped, f"{role.relative_to(ROOT)}: no upstream inventory mapping")
+    return groups, roles
+
+
+def check_inventory(inventory):
+    entries = records(inventory, "files", "provenance/source-inventory.json")
+    require(inventory.get("file_count") == len(entries), "inventory file_count differs from files length")
+    seen = set()
+    subtree = inventory.get("source", {}).get("subtree", "")
+    for entry in entries:
+        source = entry.get("source_path", "")
+        path = PurePosixPath(source)
+        require(bool(source) and not path.is_absolute() and ".." not in path.parts and source.startswith(subtree + "/"), f"inventory: invalid source_path {source!r}")
+        require(source not in seen, f"inventory: duplicate source_path {source}")
+        seen.add(source)
+        require(bool(SHA.fullmatch(entry.get("blob_sha", ""))), f"{source}: invalid blob_sha")
+        require(type(entry.get("bytes")) is int and entry["bytes"] >= 0, f"{source}: invalid byte count")
+        require(bool(entry.get("kind")) and bool(entry.get("disposition", "").strip()), f"{source}: missing kind or disposition")
+        destinations = entry.get("adapted_paths", [])
+        if not isinstance(destinations, list) or not all(isinstance(path, str) for path in destinations):
+            raise ValueError(f"{source}: adapted_paths must be a JSON array of strings")
+        require(len(destinations) == len(set(destinations)), f"{source}: duplicate adapted path")
+        for destination in destinations:
+            local_path(destination, source)
+        if not destinations:
+            require(entry.get("disposition", "").startswith("omitted:"), f"{source}: unmapped file needs an explicit omitted disposition")
+
+
+def check_benny():
+    relative = "integrations/benny/templates/configuration.example.json"
+    configuration = load_json(relative)
+    require(configuration.get("schema_version") == 1, f"{relative}: unsupported schema_version")
+    require(configuration.get("enabled") is False, f"{relative}: example must remain disabled")
+    permissions = configuration.get("permissions", {})
+    require(bool(permissions) and all(value is False for value in permissions.values()), f"{relative}: all action permissions must be false")
+    expected = {
+        ("repository", "draft_only"): True,
+        ("control", "disposable_test_state_required"): True,
+        ("isolation", "require_technical_credential_exclusion"): True,
+        ("isolation", "require_no_worker_slack_write_tools"): True,
+        ("isolation", "verified"): False,
+        ("secrets", "values_in_this_file"): False,
+        ("artifacts", "review_before_upload"): True,
+        ("routing", "owner_pings"): False,
+    }
+    for (group, key), value in expected.items():
+        require(configuration.get(group, {}).get(key) is value, f"{relative}: {group}.{key} must be {str(value).lower()}")
+    require(configuration.get("secrets", {}).get("route") == "host-secure-handoff-only", f"{relative}: secrets route must use the host secure handoff")
+
+
+def check_symlinks(groups):
+    # This is a disposable packaging fixture, never an actual discovery directory.
+    # Copy only distribution resources used by skills, never a whole working tree.
+    skills = groups["skills"]
+    resources = skills | {skill.parent / "LICENSE" for skill in skills} | groups["workflows"] | {
+        ROOT / "core/contract.md", ROOT / "core/capabilities.md", ROOT / "adapters/codex/README.md",
+    }
+    for resource in resources:
+        require(resource.is_file() and resource.resolve().is_relative_to(ROOT), f"{resource.relative_to(ROOT)}: invalid fixture source")
+    if errors:
+        return
+    with tempfile.TemporaryDirectory(prefix="pstack packaging ") as temporary:
+        fixture = Path(temporary)
+        checkout = fixture / "checkout with spaces"
+        for resource in resources:
+            destination = checkout / resource.relative_to(ROOT)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(resource, destination)
+        discovery = fixture / "discovery with spaces" / "skills"
+        discovery.mkdir(parents=True)
+        for skill in skills:
+            physical = checkout / skill.relative_to(ROOT).parent
+            link = discovery / skill.parent.name
+            link.symlink_to(physical, target_is_directory=True)
+            require(link.resolve() == physical.resolve(), f"symlink layout: wrong physical target for {skill.parent.name}")
+            check_links(link / "SKILL.md", checkout)
+
+
+def main():
+    catalog = load_json("provenance/catalog.json")
+    inventory = load_json("provenance/source-inventory.json")
+    check_inventory(inventory)
+    groups, roles = check_catalog(catalog, inventory)
+    license_text = source_text(ROOT / "LICENSE")
+    require(license_text.startswith("MIT License\n"), "LICENSE: missing MIT license header")
+    require("Copyright (c) " + catalog["source"]["copyright"] in license_text, "LICENSE: missing upstream copyright")
+    names = set()
+    for skill in groups["skills"]:
+        fields = frontmatter(skill)
+        require(fields.get("name") not in names, f"{skill.relative_to(ROOT)}: duplicate skill name")
+        names.add(fields.get("name"))
+        license_path = skill.parent / "LICENSE"
+        require(license_path.is_file() and source_text(license_path) == license_text, f"{skill.relative_to(ROOT)}: skill LICENSE must match the root license")
+        links = {destination for _, destination in markdown_links(source_text(skill))}
+        for required in ("../../core/contract.md", "../../adapters/codex/README.md", "LICENSE"):
+            require(required in links, f"{skill.relative_to(ROOT)}: missing required link {required}")
+    markdown = sorted(path for path in ROOT.rglob("*.md") if ".git" not in path.relative_to(ROOT).parts)
+    for path in markdown:
+        check_links(path, ROOT)
+    check_benny()
+    if not errors:
+        check_symlinks(groups)
+    if errors:
+        for message in errors:
+            print(f"FAIL: {message}", file=sys.stderr)
+        print(f"FAILED: {len(errors)} packaging checks", file=sys.stderr)
+        return 1
+    print(f"PASS: {len(groups['skills'])} skills, {len(groups['workflows'])} workflows, {len(groups['operational_procedures'])} disabled procedures, {len(roles)} roles; {len(inventory['files'])} inventory entries; {len(markdown)} Markdown files")
+    print("PASS: metadata, licenses, catalogs, provenance mappings, disabled configuration, local links and physical symlink layout with spaces")
+    print("Packaging validation only. No remote URLs, live Codex discovery or workflows were executed.")
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except (OSError, UnicodeError, ValueError, KeyError, TypeError, AttributeError) as error:
+        print(f"FAIL: invalid repository data: {error}", file=sys.stderr)
+        sys.exit(1)

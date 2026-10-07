@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "source": {
+    "provider": "unconfigured",
+    "channel_id": null,
+    "trusted_triage_identity": null,
+    "verdict_markers": {
+      "bug": null,
+      "performance": null,
+      "other": null
+    }
+  },
+  "repository": {
+    "url": null,
+    "base_branch": null,
+    "draft_only": true
+  },
+  "tracker": {
+    "provider": "unconfigured",
+    "team": null,
+    "project": null,
+    "reversible_compensation_action": null
+  },
+  "routing": {
+    "map_path": null,
+    "owner_pings": false
+  },
+  "control": {
+    "adapter": null,
+    "environment": null,
+    "feature_map_path": null,
+    "disposable_test_state_required": true
+  },
+  "permissions": {
+    "source_thread_post": false,
+    "tracker_create": false,
+    "tracker_compensate": false,
+    "draft_pr_create": false,
+    "schedule_create": false,
+    "tracker_update": false,
+    "operations_post": false,
+    "evidence_upload": false
+  },
+  "isolation": {
+    "require_technical_credential_exclusion": true,
+    "require_no_worker_slack_write_tools": true,
+    "verified": false
+  },
+  "budgets": {
+    "triage_minutes": null,
+    "reproduction_minutes": null,
+    "fix_minutes": null,
+    "verdict_wait_minutes": null,
+    "rejection_wait_minutes": null,
+    "followup_minutes": null
+  },
+  "models": {
+    "explorer": "inherit",
+    "implementer": "inherit",
+    "reviewer": "inherit",
+    "synthesizer": "inherit"
+  },
+  "secrets": {
+    "values_in_this_file": false,
+    "route": "host-secure-handoff-only"
+  },
+  "operations": {
+    "destination": null
+  },
+  "artifacts": {
+    "destination": null,
+    "retention_days": null,
+    "review_before_upload": true
+  }
+}

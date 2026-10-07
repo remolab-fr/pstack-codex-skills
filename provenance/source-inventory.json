@@ -1,0 +1,1610 @@
+{
+  "source": {
+    "repository": "https://github.com/cursor/plugins",
+    "revision": "d0ef80d86795816da932a153458c5dbe192d294e",
+    "subtree": "pstack",
+    "version": "0.15.15",
+    "license": "MIT",
+    "copyright": "2026 Lauren Tan"
+  },
+  "file_count": 164,
+  "files": [
+    {
+      "source_path": "pstack/.cursor-plugin/plugin.json",
+      "blob_sha": "68cc4443afd6b6f4881ab572b779f39d47854d42",
+      "bytes": 722,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "adapters/codex/README.md"
+      ],
+      "disposition": "Cursor registration omitted; host adapter documents supported use"
+    },
+    {
+      "source_path": "pstack/.gitignore",
+      "blob_sha": "aafcb345668bd80cbb256b066898d4df8988da0e",
+      "bytes": 30,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [],
+      "disposition": "omitted: original build/runtime ignore rules are not needed"
+    },
+    {
+      "source_path": "pstack/LICENSE",
+      "blob_sha": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "bytes": 1067,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "LICENSE",
+        "NOTICE.md"
+      ],
+      "disposition": "MIT notice preserved"
+    },
+    {
+      "source_path": "pstack/README.md",
+      "blob_sha": "7227da33bb709bf8744dbde5f3da38016a19350d",
+      "bytes": 24538,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/agents/comment-sicko.md",
+      "blob_sha": "9a688b8c5b5734ee80f782d4616a78c4c59b0946",
+      "bytes": 2230,
+      "kind": "agent-profile",
+      "adapted_paths": [
+        "roles/comment-reviewer.md"
+      ],
+      "disposition": "rewritten role contract"
+    },
+    {
+      "source_path": "pstack/agents/poteto-agent.md",
+      "blob_sha": "f9d79a75560520cbb2f939c587ce00fa7e33037a",
+      "bytes": 686,
+      "kind": "agent-profile",
+      "adapted_paths": [
+        "roles/coordinator.md"
+      ],
+      "disposition": "rewritten role contract"
+    },
+    {
+      "source_path": "pstack/assets/logo.png",
+      "blob_sha": "3754e87cb0e1362f17428bc84c661166ee145156",
+      "bytes": 361140,
+      "kind": "documentation-image",
+      "adapted_paths": [],
+      "disposition": "omitted: source documentation artwork is not required for procedural content"
+    },
+    {
+      "source_path": "pstack/automations/benny/FOR_AGENTS.md",
+      "blob_sha": "e732156e9b88b463e4a40c0f51596bca4aedcdb4",
+      "bytes": 7460,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "integrations/benny/README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/automations/benny/README.md",
+      "blob_sha": "76804c8c566aae1a70734725416ae2f251a7ae30",
+      "bytes": 1321,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "integrations/benny/README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/automations/benny/skills/reproduce-and-fix-issues/SKILL.md",
+      "blob_sha": "effa5f0a38d2cfe7d948a71ff51827e2e2017257",
+      "bytes": 14238,
+      "kind": "skill",
+      "adapted_paths": [
+        "integrations/benny/procedures/reproduce-and-fix-issues/PROCEDURE.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md",
+      "blob_sha": "3399491eddbc458f3a7ceb6fd62b8f89266b07ef",
+      "bytes": 5517,
+      "kind": "reference",
+      "adapted_paths": [
+        "integrations/benny/procedures/reproduce-and-fix-issues/PROCEDURE.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md",
+      "blob_sha": "620ddedba3c13d603974b1d78754e36946dacf81",
+      "bytes": 5646,
+      "kind": "reference",
+      "adapted_paths": [
+        "integrations/benny/procedures/reproduce-and-fix-issues/PROCEDURE.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/automations/benny/skills/reproduce-and-fix-issues/references/verify-existing-fix.md",
+      "blob_sha": "e3cda3c06a48432fd932b32318ade4e6178ef4ed",
+      "bytes": 3149,
+      "kind": "reference",
+      "adapted_paths": [
+        "integrations/benny/procedures/reproduce-and-fix-issues/PROCEDURE.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/automations/benny/skills/setup-benny/SKILL.md",
+      "blob_sha": "b05c26f4d4a39c16559f5ef2bbdd380adc923fda",
+      "bytes": 13992,
+      "kind": "skill",
+      "adapted_paths": [
+        "integrations/benny/procedures/setup-benny/PROCEDURE.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/automations/benny/skills/triage-issue-reports/SKILL.md",
+      "blob_sha": "d691672d00fb8f8f07fc17290d00ae49d1fd119b",
+      "bytes": 10320,
+      "kind": "skill",
+      "adapted_paths": [
+        "integrations/benny/procedures/triage-issue-reports/PROCEDURE.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/automations/benny/skills/triage-issue-reports/references/routing.example.md",
+      "blob_sha": "d71aea768c7d9452270ca4f11091a47e5750038c",
+      "bytes": 1892,
+      "kind": "reference",
+      "adapted_paths": [
+        "integrations/benny/procedures/triage-issue-reports/PROCEDURE.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/automations/benny/templates/configuration.example.yaml",
+      "blob_sha": "8616f5fcced0ac57964467dd537a6ba80560a271",
+      "bytes": 2424,
+      "kind": "configuration-template",
+      "adapted_paths": [
+        "integrations/benny/templates/configuration.example.json"
+      ],
+      "disposition": "rewritten disabled, secret-free template"
+    },
+    {
+      "source_path": "pstack/automations/benny/templates/reproduce-automation-prompt.md",
+      "blob_sha": "5c66c922d69f7323d0c78461480baaf45d7b1284",
+      "bytes": 1822,
+      "kind": "configuration-template",
+      "adapted_paths": [
+        "integrations/benny/templates/reproduction-prompt.md"
+      ],
+      "disposition": "rewritten disabled, secret-free template"
+    },
+    {
+      "source_path": "pstack/automations/benny/templates/triage-automation-prompt.md",
+      "blob_sha": "939e5e15c09f57d17cee00c9ed58b3679a268e0f",
+      "bytes": 1569,
+      "kind": "configuration-template",
+      "adapted_paths": [
+        "integrations/benny/templates/triage-prompt.md"
+      ],
+      "disposition": "rewritten disabled, secret-free template"
+    },
+    {
+      "source_path": "pstack/docs/guide/01-setup.md",
+      "blob_sha": "62420df8255f5f3de03f3977e64bc0f34dbdc073",
+      "bytes": 4313,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/02-poteto-mode.md",
+      "blob_sha": "8341604aebe418077003b10a894ebcaff2a9ce0d",
+      "bytes": 7045,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/03-understand.md",
+      "blob_sha": "e15bea0520eff6e03df789a22cd4224daee04bd6",
+      "bytes": 5197,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/04-design.md",
+      "blob_sha": "61d5bbb591c93e432fafe77259cd62a7aaf1cce8",
+      "bytes": 8759,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/05-build-and-clean.md",
+      "blob_sha": "fc48a46df4f3e7f980522d40571367d4b809733b",
+      "bytes": 5696,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/06-verify-and-ship.md",
+      "blob_sha": "007ea2cab45724e48e0ab8f52e52bf7957f694f2",
+      "bytes": 9683,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/07-overnight.md",
+      "blob_sha": "cbad0672355927da4aa86547c5e5e108b354a4e2",
+      "bytes": 9139,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/08-principles.md",
+      "blob_sha": "0aaec930c3e6ca6a014087194d519048dd52b764",
+      "bytes": 5916,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/09-make-it-yours.md",
+      "blob_sha": "321caaf9169aba31c69996fcf0de9c9423b24188",
+      "bytes": 7632,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/10-recipes-and-pitfalls.md",
+      "blob_sha": "68751e7c02bde6e7b0620b9469c0e10b5e022168",
+      "bytes": 7419,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/README.md",
+      "blob_sha": "627bfb222f5a6b0f544809de2ef43ec056ee684f",
+      "bytes": 2608,
+      "kind": "metadata-or-guide",
+      "adapted_paths": [
+        "README.md",
+        "docs/adaptation.md"
+      ],
+      "disposition": "guide/setup content rewritten"
+    },
+    {
+      "source_path": "pstack/docs/guide/images/design.jpg",
+      "blob_sha": "f86909437f8b5a83da3cba7bc35a018c9d4887c8",
+      "bytes": 402373,
+      "kind": "documentation-image",
+      "adapted_paths": [],
+      "disposition": "omitted: source documentation artwork is not required for procedural content"
+    },
+    {
+      "source_path": "pstack/docs/guide/images/overnight.jpg",
+      "blob_sha": "d64e1c63066c9f088da909160f5e136049e9a512",
+      "bytes": 347071,
+      "kind": "documentation-image",
+      "adapted_paths": [],
+      "disposition": "omitted: source documentation artwork is not required for procedural content"
+    },
+    {
+      "source_path": "pstack/docs/guide/images/recipes.jpg",
+      "blob_sha": "69fe992fdb9fb8e7baacc144ea140f9c93b262fb",
+      "bytes": 410550,
+      "kind": "documentation-image",
+      "adapted_paths": [],
+      "disposition": "omitted: source documentation artwork is not required for procedural content"
+    },
+    {
+      "source_path": "pstack/docs/guide/images/router.jpg",
+      "blob_sha": "c8fba6a266505caf406d5185d7a4cc6e34be98a4",
+      "bytes": 450945,
+      "kind": "documentation-image",
+      "adapted_paths": [],
+      "disposition": "omitted: source documentation artwork is not required for procedural content"
+    },
+    {
+      "source_path": "pstack/docs/guide/images/understanding.jpg",
+      "blob_sha": "bb1b1ac15dd11da9ad047d203049a1a24abb2b46",
+      "bytes": 376523,
+      "kind": "documentation-image",
+      "adapted_paths": [],
+      "disposition": "omitted: source documentation artwork is not required for procedural content"
+    },
+    {
+      "source_path": "pstack/docs/guide/images/verification.jpg",
+      "blob_sha": "a252ae0b5e14cb6fcef2e3b806bbd66316242446",
+      "bytes": 331450,
+      "kind": "documentation-image",
+      "adapted_paths": [],
+      "disposition": "omitted: source documentation artwork is not required for procedural content"
+    },
+    {
+      "source_path": "pstack/skills/architect/SKILL.md",
+      "blob_sha": "c9c0726f57556f4c26bd7e7df5314ba15b3f1ac9",
+      "bytes": 5661,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-architect/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/architect/references/design-red-flags.md",
+      "blob_sha": "f8503c9595b289c607ff5088f82b21197edf94ec",
+      "bytes": 3009,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-architect/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/architect/references/rationale-template.md",
+      "blob_sha": "a10f77f59510c532cd909faaf3bfeee5ffbfd588",
+      "bytes": 3050,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-architect/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/architect/references/runner-prompt.md",
+      "blob_sha": "b1ad21aef22e80d718c361787190b599eb359d6c",
+      "bytes": 3092,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-architect/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/arena/SKILL.md",
+      "blob_sha": "bd260a064d6e07a06073df6841e3d180d643372a",
+      "bytes": 4937,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-arena/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/automate-me/SKILL.md",
+      "blob_sha": "cd3636e9a53c7c782cf15254204dccfc854086b5",
+      "bytes": 7164,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-automate-me/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/benchmark-checklist/SKILL.md",
+      "blob_sha": "c02adb78929d0c1218fba554a31c423d65deb24d",
+      "bytes": 5409,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-benchmark-checklist/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/blast-radius/SKILL.md",
+      "blob_sha": "b296cce0d746260a53c16e3671cb05bacfe82daf",
+      "bytes": 3856,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-blast-radius/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/bro/SKILL.md",
+      "blob_sha": "b1701b778639c08bfc306291d70170c525c66a68",
+      "bytes": 267,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-bro/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/correct/SKILL.md",
+      "blob_sha": "c09f486e32935a154dd98daa13aa8187856600fe",
+      "bytes": 2445,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-correct/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/create-verification-skill/SKILL.md",
+      "blob_sha": "f869e26122991252373d5b8f6357e5b9ff195a00",
+      "bytes": 5879,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-create-verification-skill/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/create-verification-skill/references/feature-map-example/README.md",
+      "blob_sha": "fb64570cfab3bbe672fe80925651933ebd57aa33",
+      "bytes": 2601,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-create-verification-skill/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/create-verification-skill/references/feature-map-example/create-note.md",
+      "blob_sha": "21357566b69223a503d6780a04fb90ce540eae22",
+      "bytes": 2926,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-create-verification-skill/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/create-verification-skill/references/feature-map-example/search.md",
+      "blob_sha": "1f8e57d3aaf19cf27a9464d55fa72e46bcbc8b0f",
+      "bytes": 3478,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-create-verification-skill/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/figure-it-out/SKILL.md",
+      "blob_sha": "fbf3fb122cab127d71d3c41e84711e61cc5dec4c",
+      "bytes": 4059,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-figure-it-out/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/how/SKILL.md",
+      "blob_sha": "139cac5e4dce5d5889daaf77faa8d5f81dd87318",
+      "bytes": 3081,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-how/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/how/references/explainer-prompt.md",
+      "blob_sha": "3a36fb6736c5b74ac2774350841e332a019dec94",
+      "bytes": 3085,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-how/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/how/references/explorer-prompt.md",
+      "blob_sha": "9b4b0594bfd779015616e9d280369aba939583b4",
+      "bytes": 2684,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-how/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/interrogate/SKILL.md",
+      "blob_sha": "bac0049e40b624343537d12fb8e13a974a5f376a",
+      "bytes": 4998,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-interrogate/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/interrogate/references/code-quality-review.md",
+      "blob_sha": "16581250d81044c7e80fe234c4970a3f7b7fc98a",
+      "bytes": 5217,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-interrogate/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/interrogate/references/lead-judgment.md",
+      "blob_sha": "5ce526097fdd3dfeaf4cd3b126a3f486c3ee36ae",
+      "bytes": 3465,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-interrogate/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/interrogate/references/reviewer-prompt.md",
+      "blob_sha": "13a252b2c3cd18522d4c8dc39a7030477037b249",
+      "bytes": 2491,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-interrogate/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/interrogate/references/rubric.md",
+      "blob_sha": "2d92f1b83e13be03fb10f20cba12639a1406a2da",
+      "bytes": 5025,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-interrogate/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/maintain-verification-skill/SKILL.md",
+      "blob_sha": "a2680b91fead45a0b4963d8c367a854956bea59d",
+      "bytes": 4922,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-maintain-verification-skill/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/make-bot-ui/SKILL.md",
+      "blob_sha": "285df7569758a70e62e9f3596a1f829a5b6ba80e",
+      "bytes": 4649,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-make-bot-ui/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/no-comments/SKILL.md",
+      "blob_sha": "3b3e76295a7ad66806dcc683e4de92fb25690f8b",
+      "bytes": 2560,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-no-comments/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/poteto-help/SKILL.md",
+      "blob_sha": "a97ecddf8953b92bda7d8a8cc070faf1d68abc79",
+      "bytes": 13433,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-poteto-help/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/poteto-help/references/prompting.md",
+      "blob_sha": "6b72b2e6081fdb78a3261bd77cf7334596d1ee20",
+      "bytes": 3166,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-poteto-help/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/poteto-help/references/recipes.md",
+      "blob_sha": "73118e2a2d2d025938d7b53b541b37cb1fe9c449",
+      "bytes": 3287,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-poteto-help/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/SKILL.md",
+      "blob_sha": "de51c56164ff3da8f958437e207d14cec7d7fe99",
+      "bytes": 20563,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-poteto-mode/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/authoring-a-skill.md",
+      "blob_sha": "8c5a55a44f5e95bba92f652da0ac87e941c49538",
+      "bytes": 831,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/authoring-a-skill.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/autonomous-run.md",
+      "blob_sha": "12c3a7d84effcacf3550cb893be67498d7b28a4a",
+      "bytes": 1878,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/autonomous-run.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+      "blob_sha": "d5a68c339e25ac016ffad9c51d858f0f6c37937a",
+      "bytes": 9431,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/autopilot-full.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+      "blob_sha": "750a7547235ae8eb340285684b9be7c36dff323a",
+      "bytes": 5031,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/autopilot-stack.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/babysit.md",
+      "blob_sha": "683cf0ba889789cbe2d880fce667c75349f9ed12",
+      "bytes": 8289,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/babysit.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/bug-fix.md",
+      "blob_sha": "eeebc42b7477d435d8ac61d631d84822f908f59c",
+      "bytes": 2255,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/bug-fix.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/eval.md",
+      "blob_sha": "3dae34e2ef0cbdd9bafa5ab372da5ea143d48452",
+      "bytes": 2524,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/eval.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/feature.md",
+      "blob_sha": "79a6bbbe0ce61c3b5ef9af1ee8e3ccdb0557edc6",
+      "bytes": 2766,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/feature.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/hillclimb.md",
+      "blob_sha": "c6441b92d30a71489d88eae5bfa8dc457da55cb1",
+      "bytes": 4403,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/hillclimb.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/investigation.md",
+      "blob_sha": "cd119f04f23e0b7acb3f8cc5ba13ce4ab7aa6c7d",
+      "bytes": 928,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/investigation.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "blob_sha": "f8ed78a6533cc5d738d3a3ec106bf2577d3f98ca",
+      "bytes": 12977,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/multi-phase-plan.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+      "blob_sha": "4e25989729174580e48ce36e265f298231c6de7f",
+      "bytes": 6142,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/opening-a-pr.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/orchestrate.md",
+      "blob_sha": "d5b6d008026ff0177f52e22a6fb4b2edae5c87e2",
+      "bytes": 16779,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/orchestrate.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/pause-safely.md",
+      "blob_sha": "9d1c5f8303976fff40de099f7f28185909430c11",
+      "bytes": 1135,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/pause-safely.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/perf-issue.md",
+      "blob_sha": "405c7a4362bedbd4194a5ef234553adf0dff78c9",
+      "bytes": 1446,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/perf-issue.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/prototype.md",
+      "blob_sha": "18bedc7e9249d180f9198d5b4b13e3817d41d281",
+      "bytes": 2161,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/prototype.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/refactoring.md",
+      "blob_sha": "df2a863b531906c64f92b9f9d8feb62f8c7a8665",
+      "bytes": 3211,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/refactoring.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/runtime-forensics.md",
+      "blob_sha": "ba659bfe1c4c2f956f3285974bfdc941120f9948",
+      "bytes": 1210,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/runtime-forensics.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/session-pickup.md",
+      "blob_sha": "9b2ed06e0ff8b01bf03b7a0d6a4cbb8ba3a46720",
+      "bytes": 1678,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/session-pickup.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/shipping.md",
+      "blob_sha": "0f1d41f189222b991734015926a3b22607e1b92f",
+      "bytes": 5439,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/shipping.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/trace-forensics.md",
+      "blob_sha": "48ed6b2f690215027eda96a1897ed98212bbd07a",
+      "bytes": 1865,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/trace-forensics.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/visual-parity.md",
+      "blob_sha": "248830ec74a593fc22143a842026388f92f1b9f4",
+      "bytes": 1197,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/visual-parity.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+      "blob_sha": "39c9ef9f368ac63b0e4245503302a4c174e846d6",
+      "bytes": 2932,
+      "kind": "workflow",
+      "adapted_paths": [
+        "workflows/worktree-cleanup.md"
+      ],
+      "disposition": "rewritten portable workflow"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/references/bugbot-triage.md",
+      "blob_sha": "b2fc7d35712783707607cf2f39752885c8d5105c",
+      "bytes": 9629,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-poteto-mode/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/bootstrap.ts",
+      "blob_sha": "d9c63e2007449a80000abe75ecaf7f2a0bd5826b",
+      "bytes": 1737,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/bun.lock",
+      "blob_sha": "65f0c662f300a0f72b319ca93ea18f56219c2581",
+      "bytes": 6679,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/check-plan.mjs",
+      "blob_sha": "d242f28eb801e781ccc2f2ba93b700b263a77816",
+      "bytes": 7594,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/orch/orch.test.ts",
+      "blob_sha": "538775e37f3ac6fd2dd128883b7f7fe51c1316d5",
+      "bytes": 18425,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/orch/orch.ts",
+      "blob_sha": "219ac17bd8805b45140eca7c429834be9ded1b7d",
+      "bytes": 15511,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/orch/store.ts",
+      "blob_sha": "5e6c602fb670a6b5598977f5bf85d717cf797ef7",
+      "bytes": 42927,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/package.json",
+      "blob_sha": "8a3dfe27c2d0221a786e1ce61963d51c55260725",
+      "bytes": 352,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/cli.test.ts",
+      "blob_sha": "0656b413e6c180858ca42981105944c45caf9dca",
+      "bytes": 6161,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/cli.ts",
+      "blob_sha": "ec8a2f27c5ac24866b699e6395e7d1f32e595068",
+      "bytes": 6983,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts",
+      "blob_sha": "2312522cd7399334115a5f39fd6438aab7fc5aa5",
+      "bytes": 2944,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/github.test.ts",
+      "blob_sha": "87f4048f08a63a54975c4ef2de8065375e751683",
+      "bytes": 9059,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/github.ts",
+      "blob_sha": "79bc06fb682c5d99de7d48338b0a6ecd27a518da",
+      "bytes": 24072,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/policy.test.ts",
+      "blob_sha": "0620ddedde46da8e763ab2a55ebceaad2aa6d0a7",
+      "bytes": 12397,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/policy.ts",
+      "blob_sha": "4665be37e8f9afff1c9e1f5dd60d98e0d70c8c6c",
+      "bytes": 25132,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/render.ts",
+      "blob_sha": "0e935839357335f24ab1bbc193d761495646ea99",
+      "bytes": 7083,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/tsconfig.json",
+      "blob_sha": "477af90b05cbd24fcf974fd73cf331d5ac7379cc",
+      "bytes": 270,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/types.compile.ts",
+      "blob_sha": "1b53279c7f3e5da55703ed17d6ad0616254c5751",
+      "bytes": 2258,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/types.ts",
+      "blob_sha": "b67144e0d757e0b61ff079f981ced0a98555ea9d",
+      "bytes": 12359,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/watch-pr/watch-pr",
+      "blob_sha": "99807d577c3b006cfe6ee9e149cf2914bfd4afd6",
+      "bytes": 211,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+      "blob_sha": "b9af08160032aeb17143248f2a3648e98f5a75b3",
+      "bytes": 3984,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/principle-attack-the-premise/SKILL.md",
+      "blob_sha": "f9785ff9fdcf37d1c689e4468da7d611f3b76d4b",
+      "bytes": 1941,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-attack-the-premise/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-boundary-discipline/SKILL.md",
+      "blob_sha": "dfe9a6fb0e5acd6ae43a41437ee0951adfe839cb",
+      "bytes": 1883,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-boundary-discipline/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-build-the-lever/SKILL.md",
+      "blob_sha": "277189a10b00fddc7cbb63fcf2323c7341abb0df",
+      "bytes": 2458,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-build-the-lever/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+      "blob_sha": "df9cd5ff2fb3c18267349cc6aecd8121848ef834",
+      "bytes": 2211,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-encode-lessons-in-structure/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+      "blob_sha": "85dd16f1312f3427e2dddcfc8e7deb89e2555bb3",
+      "bytes": 1152,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-exhaust-the-design-space/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-experience-first/SKILL.md",
+      "blob_sha": "5ea51741302cf3af4cc0b90ec70815bd3208dbf2",
+      "bytes": 1184,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-experience-first/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-explain-the-number/SKILL.md",
+      "blob_sha": "9c22351d1fbe1ffcf277e61aef9fdb7816306fa7",
+      "bytes": 2109,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-explain-the-number/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-fix-root-causes/SKILL.md",
+      "blob_sha": "7e5a419aeec97b4076fa517865013677428a9fa3",
+      "bytes": 1246,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-fix-root-causes/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-foundational-thinking/SKILL.md",
+      "blob_sha": "19cc6c0eaa6fcbc2863fb73d1d25ca196c6a46e0",
+      "bytes": 1530,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-foundational-thinking/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+      "blob_sha": "c4db544909b26981c45eed9caa6591d32885f841",
+      "bytes": 939,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-guard-the-context-window/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-laziness-protocol/SKILL.md",
+      "blob_sha": "e5bc77e62aa96ae13e482a84df61b3c711c5d828",
+      "bytes": 1371,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-laziness-protocol/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+      "blob_sha": "a0834247ca99b09c11441747717a8034d4c22d7c",
+      "bytes": 1390,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-make-operations-idempotent/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "blob_sha": "06c7cfd87becc62d614d0af075b792f8ec6eb21d",
+      "bytes": 1146,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-migrate-callers-then-delete-legacy-apis/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-minimize-reader-load/SKILL.md",
+      "blob_sha": "64541d963123e344078d82fd3977e857e76129df",
+      "bytes": 2095,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-minimize-reader-load/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-model-the-domain/SKILL.md",
+      "blob_sha": "e1d664a19243c90a84e5e7a816e9e05146c88720",
+      "bytes": 2082,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-model-the-domain/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+      "blob_sha": "11f08b6ef1fd93a3b3e47c57eb84716dc9acbff9",
+      "bytes": 1172,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-never-block-on-the-human/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+      "blob_sha": "c49be0bc74783f0dee013101365ae09b2abb48a2",
+      "bytes": 1078,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-outcome-oriented-execution/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-prove-it-works/SKILL.md",
+      "blob_sha": "5dc14a3b06f9d579e5c17cd8a7242f432ddb3125",
+      "bytes": 1371,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-prove-it-works/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+      "blob_sha": "090a4325f43a96080cce3895f0e932b62c39146a",
+      "bytes": 844,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-redesign-from-first-principles/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "blob_sha": "ff93b4a2032c08e2232992a9a24f2891ee14e58f",
+      "bytes": 1565,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-separate-before-serializing-shared-state/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+      "blob_sha": "986371260ebccd9a5a6818c9561e88c1d270d0ee",
+      "bytes": 1705,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-sequence-verifiable-units/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+      "blob_sha": "d28770cf47a5798d0250a25ad494aedfecad154e",
+      "bytes": 1094,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-subtract-before-you-add/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+      "blob_sha": "42de6f8f7cab01b9f67aa28bd59b128f7574fbab",
+      "bytes": 2575,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-test-behavior-not-implementation/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/principle-type-system-discipline/SKILL.md",
+      "blob_sha": "6030f171bee0d1902cf7ca91f06225e09f0f5433",
+      "bytes": 4922,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-principle-type-system-discipline/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/recall/SKILL.md",
+      "blob_sha": "a70062a3f89a8d68b3391bc71fc4c6cc2dfcf6a4",
+      "bytes": 5212,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-recall/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/reflect/SKILL.md",
+      "blob_sha": "5ac697a2cc4cd4d066772b76855848a49a8b33c6",
+      "bytes": 4992,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-reflect/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/reflect/references/divergent-reviewer.md",
+      "blob_sha": "de95be3b9cc9c11052596249336dcc328473eb26",
+      "bytes": 3889,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-reflect/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/reflect/references/judgment-reviewer.md",
+      "blob_sha": "222f02b1c3c6eb3e700fa09a71bad108807d3485",
+      "bytes": 3255,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-reflect/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/reflect/references/synthesizer.md",
+      "blob_sha": "d0e78195186c0dd6cfdc87ba19402ea8cd2aa385",
+      "bytes": 4164,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-reflect/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/reflect/references/tooling-reviewer.md",
+      "blob_sha": "a37e2009d6ef08f535df87e020e52426c6a5fa33",
+      "bytes": 4609,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-reflect/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/setup-pstack/SKILL.md",
+      "blob_sha": "90a9e575397fb59f4d9a47e6157c2106f4b4a5e2",
+      "bytes": 5716,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-setup-pstack/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/show-me-your-work/SKILL.md",
+      "blob_sha": "d350a150c36ca16382b4aa6d4196b39e67454ad1",
+      "bytes": 6418,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-show-me-your-work/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/show-me-your-work/references/decision-log-template.tsv",
+      "blob_sha": "db220376ecb8c582a6a4f6575a8f26469603a38d",
+      "bytes": 38,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-show-me-your-work/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/show-me-your-work/scripts/log.sh",
+      "blob_sha": "052e53b7e1090579eaec1d3d59f7a1cd2f2e452a",
+      "bytes": 1377,
+      "kind": "runtime-or-test-source",
+      "adapted_paths": [],
+      "disposition": "omitted: upstream executable/runtime/dependency implementation is not included"
+    },
+    {
+      "source_path": "pstack/skills/swarm/SKILL.md",
+      "blob_sha": "db22b8787966abc61216052d9f3142018404cab8",
+      "bytes": 2949,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-swarm/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/tdd/SKILL.md",
+      "blob_sha": "ca6f24c963001d9d518db2936dfe3d12f29b4e94",
+      "bytes": 3143,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-tdd/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/teach/SKILL.md",
+      "blob_sha": "25369f3f554ed6b5826340ae3eee688fac0bda80",
+      "bytes": 5623,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-teach/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/technical-writing/SKILL.md",
+      "blob_sha": "5eef4fc494a059eb740cb621dadb4a7a81af23e4",
+      "bytes": 9792,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-technical-writing/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/typescript-best-practices/SKILL.md",
+      "blob_sha": "2c0279d9a5f800192605e47b55cae4e75a17ec27",
+      "bytes": 2684,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-typescript-best-practices/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/typescript-best-practices/references/patterns.md",
+      "blob_sha": "c21d876b71b9c7afa897f2f6d982ead07db8f104",
+      "bytes": 9214,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-typescript-best-practices/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/unslop/SKILL.md",
+      "blob_sha": "229a090708710c36caa0017f8d33e90880dc6846",
+      "bytes": 6015,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-unslop/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/why/SKILL.md",
+      "blob_sha": "a78076f9d492dbdb8b87136cf9d657a1b97659f7",
+      "bytes": 10362,
+      "kind": "skill",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "rewritten portable procedure"
+    },
+    {
+      "source_path": "pstack/skills/why/references/epistemics.md",
+      "blob_sha": "3732bf6881b60d1337fa3498574452a85d33ba30",
+      "bytes": 7749,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/investigator-prompt.md",
+      "blob_sha": "3b56af44c589833508f4605cfdd4432b39a16739",
+      "bytes": 6985,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/source-playbook.md",
+      "blob_sha": "aa3d877cd539763ff05e266ae0a02dd811441e2b",
+      "bytes": 1363,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/code-archaeology.md",
+      "blob_sha": "32d5f97f8d2d3974c668f5f0392737b7e8e25afd",
+      "bytes": 3489,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/databricks.md",
+      "blob_sha": "2770763ff5d0d1ad004abcc9a0138c9537ad1978",
+      "bytes": 6994,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/datadog.md",
+      "blob_sha": "d8363b1c1d1c7eadb15d47abd83bf70537c39620",
+      "bytes": 5323,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/incident-postmortem.md",
+      "blob_sha": "450d6e52f25b1b41f741cb3e9c93e1c74ef858b4",
+      "bytes": 1973,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/linear.md",
+      "blob_sha": "899c643c078f322afe6ae0ef78a007f8ffd356c1",
+      "bytes": 2996,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/notion.md",
+      "blob_sha": "d16230a4105fd1dacf870da0950a38faeb9381e6",
+      "bytes": 2853,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/sentry.md",
+      "blob_sha": "2b7cf6f3098ee868547dc4e69efacfe9c255246b",
+      "bytes": 4947,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/sources/slack.md",
+      "blob_sha": "863a527d60e4e055e680834ef8098ea04273a1ae",
+      "bytes": 3105,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    },
+    {
+      "source_path": "pstack/skills/why/references/synthesizer-prompt.md",
+      "blob_sha": "9707dfcc2fc57ea126484a433c5cd9ee4d400ef3",
+      "bytes": 7984,
+      "kind": "reference",
+      "adapted_paths": [
+        "skills/pstack-why/SKILL.md"
+      ],
+      "disposition": "concepts consolidated into owning procedure; source examples and host-specific detail not copied verbatim"
+    }
+  ]
+}

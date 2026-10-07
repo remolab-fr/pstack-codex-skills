@@ -1,0 +1,772 @@
+{
+  "schema_version": 1,
+  "kind": "repository-source-distribution",
+  "installed": false,
+  "native_tools_added": false,
+  "source": {
+    "repository": "https://github.com/cursor/plugins",
+    "revision": "d0ef80d86795816da932a153458c5dbe192d294e",
+    "subtree": "pstack",
+    "version": "0.15.15",
+    "license": "MIT",
+    "copyright": "2026 Lauren Tan"
+  },
+  "shared_contract": "core/contract.md",
+  "adapter": "adapters/codex/README.md",
+  "skills": [
+    {
+      "id": "pstack-architect",
+      "path": "skills/pstack-architect/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/architect/SKILL.md",
+      "source_blob_sha": "c9c0726f57556f4c26bd7e7df5314ba15b3f1ac9"
+    },
+    {
+      "id": "pstack-arena",
+      "path": "skills/pstack-arena/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/arena/SKILL.md",
+      "source_blob_sha": "bd260a064d6e07a06073df6841e3d180d643372a"
+    },
+    {
+      "id": "pstack-automate-me",
+      "path": "skills/pstack-automate-me/SKILL.md",
+      "capabilities": [
+        "history.search or supplied task evidence",
+        "source.read",
+        "artifacts.write (approved persistent changes only)"
+      ],
+      "source_path": "pstack/skills/automate-me/SKILL.md",
+      "source_blob_sha": "cd3636e9a53c7c782cf15254204dccfc854086b5"
+    },
+    {
+      "id": "pstack-benchmark-checklist",
+      "path": "skills/pstack-benchmark-checklist/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/benchmark-checklist/SKILL.md",
+      "source_blob_sha": "c02adb78929d0c1218fba554a31c423d65deb24d"
+    },
+    {
+      "id": "pstack-blast-radius",
+      "path": "skills/pstack-blast-radius/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "source.compare (when relevant)",
+        "delegation (optional)",
+        "execution.run (proof only when authorized)"
+      ],
+      "source_path": "pstack/skills/blast-radius/SKILL.md",
+      "source_blob_sha": "b296cce0d746260a53c16e3671cb05bacfe82daf"
+    },
+    {
+      "id": "pstack-bro",
+      "path": "skills/pstack-bro/SKILL.md",
+      "capabilities": [
+        "source.read (as needed)",
+        "artifacts.write (only when saving is requested)"
+      ],
+      "source_path": "pstack/skills/bro/SKILL.md",
+      "source_blob_sha": "b1701b778639c08bfc306291d70170c525c66a68"
+    },
+    {
+      "id": "pstack-correct",
+      "path": "skills/pstack-correct/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/correct/SKILL.md",
+      "source_blob_sha": "c09f486e32935a154dd98daa13aa8187856600fe"
+    },
+    {
+      "id": "pstack-create-verification-skill",
+      "path": "skills/pstack-create-verification-skill/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/create-verification-skill/SKILL.md",
+      "source_blob_sha": "f869e26122991252373d5b8f6357e5b9ff195a00"
+    },
+    {
+      "id": "pstack-figure-it-out",
+      "path": "skills/pstack-figure-it-out/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/figure-it-out/SKILL.md",
+      "source_blob_sha": "fbf3fb122cab127d71d3c41e84711e61cc5dec4c"
+    },
+    {
+      "id": "pstack-how",
+      "path": "skills/pstack-how/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "source.compare (when relevant)",
+        "delegation (optional)",
+        "execution.run (proof only when authorized)"
+      ],
+      "source_path": "pstack/skills/how/SKILL.md",
+      "source_blob_sha": "139cac5e4dce5d5889daaf77faa8d5f81dd87318"
+    },
+    {
+      "id": "pstack-interrogate",
+      "path": "skills/pstack-interrogate/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "source.compare (when relevant)",
+        "delegation (optional)",
+        "execution.run (proof only when authorized)"
+      ],
+      "source_path": "pstack/skills/interrogate/SKILL.md",
+      "source_blob_sha": "bac0049e40b624343537d12fb8e13a974a5f376a"
+    },
+    {
+      "id": "pstack-maintain-verification-skill",
+      "path": "skills/pstack-maintain-verification-skill/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/maintain-verification-skill/SKILL.md",
+      "source_blob_sha": "a2680b91fead45a0b4963d8c367a854956bea59d"
+    },
+    {
+      "id": "pstack-make-bot-ui",
+      "path": "skills/pstack-make-bot-ui/SKILL.md",
+      "capabilities": [
+        "artifacts.write",
+        "webhook (optional live integration)",
+        "secrets.handoff (live integration)",
+        "external.write (publishing)"
+      ],
+      "source_path": "pstack/skills/make-bot-ui/SKILL.md",
+      "source_blob_sha": "285df7569758a70e62e9f3596a1f829a5b6ba80e"
+    },
+    {
+      "id": "pstack-no-comments",
+      "path": "skills/pstack-no-comments/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/no-comments/SKILL.md",
+      "source_blob_sha": "3b3e76295a7ad66806dcc683e4de92fb25690f8b"
+    },
+    {
+      "id": "pstack-poteto-help",
+      "path": "skills/pstack-poteto-help/SKILL.md",
+      "capabilities": [
+        "source.read (as needed)",
+        "artifacts.write (only when saving is requested)"
+      ],
+      "source_path": "pstack/skills/poteto-help/SKILL.md",
+      "source_blob_sha": "a97ecddf8953b92bda7d8a8cc070faf1d68abc79"
+    },
+    {
+      "id": "pstack-poteto-mode",
+      "path": "skills/pstack-poteto-mode/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/poteto-mode/SKILL.md",
+      "source_blob_sha": "de51c56164ff3da8f958437e207d14cec7d7fe99"
+    },
+    {
+      "id": "pstack-principle-attack-the-premise",
+      "path": "skills/pstack-principle-attack-the-premise/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-attack-the-premise/SKILL.md",
+      "source_blob_sha": "f9785ff9fdcf37d1c689e4468da7d611f3b76d4b"
+    },
+    {
+      "id": "pstack-principle-boundary-discipline",
+      "path": "skills/pstack-principle-boundary-discipline/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-boundary-discipline/SKILL.md",
+      "source_blob_sha": "dfe9a6fb0e5acd6ae43a41437ee0951adfe839cb"
+    },
+    {
+      "id": "pstack-principle-build-the-lever",
+      "path": "skills/pstack-principle-build-the-lever/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-build-the-lever/SKILL.md",
+      "source_blob_sha": "277189a10b00fddc7cbb63fcf2323c7341abb0df"
+    },
+    {
+      "id": "pstack-principle-encode-lessons-in-structure",
+      "path": "skills/pstack-principle-encode-lessons-in-structure/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+      "source_blob_sha": "df9cd5ff2fb3c18267349cc6aecd8121848ef834"
+    },
+    {
+      "id": "pstack-principle-exhaust-the-design-space",
+      "path": "skills/pstack-principle-exhaust-the-design-space/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+      "source_blob_sha": "85dd16f1312f3427e2dddcfc8e7deb89e2555bb3"
+    },
+    {
+      "id": "pstack-principle-experience-first",
+      "path": "skills/pstack-principle-experience-first/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-experience-first/SKILL.md",
+      "source_blob_sha": "5ea51741302cf3af4cc0b90ec70815bd3208dbf2"
+    },
+    {
+      "id": "pstack-principle-explain-the-number",
+      "path": "skills/pstack-principle-explain-the-number/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-explain-the-number/SKILL.md",
+      "source_blob_sha": "9c22351d1fbe1ffcf277e61aef9fdb7816306fa7"
+    },
+    {
+      "id": "pstack-principle-fix-root-causes",
+      "path": "skills/pstack-principle-fix-root-causes/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-fix-root-causes/SKILL.md",
+      "source_blob_sha": "7e5a419aeec97b4076fa517865013677428a9fa3"
+    },
+    {
+      "id": "pstack-principle-foundational-thinking",
+      "path": "skills/pstack-principle-foundational-thinking/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-foundational-thinking/SKILL.md",
+      "source_blob_sha": "19cc6c0eaa6fcbc2863fb73d1d25ca196c6a46e0"
+    },
+    {
+      "id": "pstack-principle-guard-the-context-window",
+      "path": "skills/pstack-principle-guard-the-context-window/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+      "source_blob_sha": "c4db544909b26981c45eed9caa6591d32885f841"
+    },
+    {
+      "id": "pstack-principle-laziness-protocol",
+      "path": "skills/pstack-principle-laziness-protocol/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-laziness-protocol/SKILL.md",
+      "source_blob_sha": "e5bc77e62aa96ae13e482a84df61b3c711c5d828"
+    },
+    {
+      "id": "pstack-principle-make-operations-idempotent",
+      "path": "skills/pstack-principle-make-operations-idempotent/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+      "source_blob_sha": "a0834247ca99b09c11441747717a8034d4c22d7c"
+    },
+    {
+      "id": "pstack-principle-migrate-callers-then-delete-legacy-apis",
+      "path": "skills/pstack-principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "source_blob_sha": "06c7cfd87becc62d614d0af075b792f8ec6eb21d"
+    },
+    {
+      "id": "pstack-principle-minimize-reader-load",
+      "path": "skills/pstack-principle-minimize-reader-load/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-minimize-reader-load/SKILL.md",
+      "source_blob_sha": "64541d963123e344078d82fd3977e857e76129df"
+    },
+    {
+      "id": "pstack-principle-model-the-domain",
+      "path": "skills/pstack-principle-model-the-domain/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-model-the-domain/SKILL.md",
+      "source_blob_sha": "e1d664a19243c90a84e5e7a816e9e05146c88720"
+    },
+    {
+      "id": "pstack-principle-never-block-on-the-human",
+      "path": "skills/pstack-principle-never-block-on-the-human/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+      "source_blob_sha": "11f08b6ef1fd93a3b3e47c57eb84716dc9acbff9"
+    },
+    {
+      "id": "pstack-principle-outcome-oriented-execution",
+      "path": "skills/pstack-principle-outcome-oriented-execution/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+      "source_blob_sha": "c49be0bc74783f0dee013101365ae09b2abb48a2"
+    },
+    {
+      "id": "pstack-principle-prove-it-works",
+      "path": "skills/pstack-principle-prove-it-works/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-prove-it-works/SKILL.md",
+      "source_blob_sha": "5dc14a3b06f9d579e5c17cd8a7242f432ddb3125"
+    },
+    {
+      "id": "pstack-principle-redesign-from-first-principles",
+      "path": "skills/pstack-principle-redesign-from-first-principles/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+      "source_blob_sha": "090a4325f43a96080cce3895f0e932b62c39146a"
+    },
+    {
+      "id": "pstack-principle-separate-before-serializing-shared-state",
+      "path": "skills/pstack-principle-separate-before-serializing-shared-state/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "source_blob_sha": "ff93b4a2032c08e2232992a9a24f2891ee14e58f"
+    },
+    {
+      "id": "pstack-principle-sequence-verifiable-units",
+      "path": "skills/pstack-principle-sequence-verifiable-units/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+      "source_blob_sha": "986371260ebccd9a5a6818c9561e88c1d270d0ee"
+    },
+    {
+      "id": "pstack-principle-subtract-before-you-add",
+      "path": "skills/pstack-principle-subtract-before-you-add/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+      "source_blob_sha": "d28770cf47a5798d0250a25ad494aedfecad154e"
+    },
+    {
+      "id": "pstack-principle-test-behavior-not-implementation",
+      "path": "skills/pstack-principle-test-behavior-not-implementation/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+      "source_blob_sha": "42de6f8f7cab01b9f67aa28bd59b128f7574fbab"
+    },
+    {
+      "id": "pstack-principle-type-system-discipline",
+      "path": "skills/pstack-principle-type-system-discipline/SKILL.md",
+      "capabilities": [
+        "source.read (when inspecting a change)",
+        "execution.run (only for authorized verification)"
+      ],
+      "source_path": "pstack/skills/principle-type-system-discipline/SKILL.md",
+      "source_blob_sha": "6030f171bee0d1902cf7ca91f06225e09f0f5433"
+    },
+    {
+      "id": "pstack-recall",
+      "path": "skills/pstack-recall/SKILL.md",
+      "capabilities": [
+        "history.search or supplied task evidence",
+        "source.read",
+        "artifacts.write (approved persistent changes only)"
+      ],
+      "source_path": "pstack/skills/recall/SKILL.md",
+      "source_blob_sha": "a70062a3f89a8d68b3391bc71fc4c6cc2dfcf6a4"
+    },
+    {
+      "id": "pstack-reflect",
+      "path": "skills/pstack-reflect/SKILL.md",
+      "capabilities": [
+        "history.search or supplied task evidence",
+        "source.read",
+        "artifacts.write (approved persistent changes only)"
+      ],
+      "source_path": "pstack/skills/reflect/SKILL.md",
+      "source_blob_sha": "5ac697a2cc4cd4d066772b76855848a49a8b33c6"
+    },
+    {
+      "id": "pstack-setup-pstack",
+      "path": "skills/pstack-setup-pstack/SKILL.md",
+      "capabilities": [
+        "source.read (as needed)",
+        "artifacts.write (only when saving is requested)"
+      ],
+      "source_path": "pstack/skills/setup-pstack/SKILL.md",
+      "source_blob_sha": "90a9e575397fb59f4d9a47e6157c2106f4b4a5e2"
+    },
+    {
+      "id": "pstack-show-me-your-work",
+      "path": "skills/pstack-show-me-your-work/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "source.compare (when relevant)",
+        "delegation (optional)",
+        "execution.run (proof only when authorized)"
+      ],
+      "source_path": "pstack/skills/show-me-your-work/SKILL.md",
+      "source_blob_sha": "d350a150c36ca16382b4aa6d4196b39e67454ad1"
+    },
+    {
+      "id": "pstack-swarm",
+      "path": "skills/pstack-swarm/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/swarm/SKILL.md",
+      "source_blob_sha": "db22b8787966abc61216052d9f3142018404cab8"
+    },
+    {
+      "id": "pstack-tdd",
+      "path": "skills/pstack-tdd/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/tdd/SKILL.md",
+      "source_blob_sha": "ca6f24c963001d9d518db2936dfe3d12f29b4e94"
+    },
+    {
+      "id": "pstack-teach",
+      "path": "skills/pstack-teach/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "source.compare (when relevant)",
+        "delegation (optional)",
+        "execution.run (proof only when authorized)"
+      ],
+      "source_path": "pstack/skills/teach/SKILL.md",
+      "source_blob_sha": "25369f3f554ed6b5826340ae3eee688fac0bda80"
+    },
+    {
+      "id": "pstack-technical-writing",
+      "path": "skills/pstack-technical-writing/SKILL.md",
+      "capabilities": [
+        "source.read (as needed)",
+        "artifacts.write (only when saving is requested)"
+      ],
+      "source_path": "pstack/skills/technical-writing/SKILL.md",
+      "source_blob_sha": "5eef4fc494a059eb740cb621dadb4a7a81af23e4"
+    },
+    {
+      "id": "pstack-typescript-best-practices",
+      "path": "skills/pstack-typescript-best-practices/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "execution.run (when needed and authorized)",
+        "artifacts.write (within scope)",
+        "delegation (optional)"
+      ],
+      "source_path": "pstack/skills/typescript-best-practices/SKILL.md",
+      "source_blob_sha": "2c0279d9a5f800192605e47b55cae4e75a17ec27"
+    },
+    {
+      "id": "pstack-unslop",
+      "path": "skills/pstack-unslop/SKILL.md",
+      "capabilities": [
+        "source.read (as needed)",
+        "artifacts.write (only when saving is requested)"
+      ],
+      "source_path": "pstack/skills/unslop/SKILL.md",
+      "source_blob_sha": "229a090708710c36caa0017f8d33e90880dc6846"
+    },
+    {
+      "id": "pstack-why",
+      "path": "skills/pstack-why/SKILL.md",
+      "capabilities": [
+        "source.read",
+        "source.compare (when relevant)",
+        "delegation (optional)",
+        "execution.run (proof only when authorized)"
+      ],
+      "source_path": "pstack/skills/why/SKILL.md",
+      "source_blob_sha": "a78076f9d492dbdb8b87136cf9d657a1b97659f7"
+    }
+  ],
+  "workflows": [
+    {
+      "id": "investigation",
+      "path": "workflows/investigation.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "bug-fix",
+      "path": "workflows/bug-fix.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "perf-issue",
+      "path": "workflows/perf-issue.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "hillclimb",
+      "path": "workflows/hillclimb.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "runtime-forensics",
+      "path": "workflows/runtime-forensics.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "trace-forensics",
+      "path": "workflows/trace-forensics.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "feature",
+      "path": "workflows/feature.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "refactoring",
+      "path": "workflows/refactoring.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "prototype",
+      "path": "workflows/prototype.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "visual-parity",
+      "path": "workflows/visual-parity.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "authoring-a-skill",
+      "path": "workflows/authoring-a-skill.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "eval",
+      "path": "workflows/eval.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "babysit",
+      "path": "workflows/babysit.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "shipping",
+      "path": "workflows/shipping.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "autonomous-run",
+      "path": "workflows/autonomous-run.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "orchestrate",
+      "path": "workflows/orchestrate.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "autopilot-full",
+      "path": "workflows/autopilot-full.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "autopilot-stack",
+      "path": "workflows/autopilot-stack.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "session-pickup",
+      "path": "workflows/session-pickup.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "pause-safely",
+      "path": "workflows/pause-safely.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "multi-phase-plan",
+      "path": "workflows/multi-phase-plan.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "worktree-cleanup",
+      "path": "workflows/worktree-cleanup.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    },
+    {
+      "id": "opening-a-pr",
+      "path": "workflows/opening-a-pr.md",
+      "requires": [
+        "core/contract.md",
+        "adapters/codex/README.md"
+      ]
+    }
+  ],
+  "operational_procedures": [
+    {
+      "id": "pstack-reproduce-and-fix-issues",
+      "path": "integrations/benny/procedures/reproduce-and-fix-issues/PROCEDURE.md",
+      "enabled": false
+    },
+    {
+      "id": "pstack-setup-benny",
+      "path": "integrations/benny/procedures/setup-benny/PROCEDURE.md",
+      "enabled": false
+    },
+    {
+      "id": "pstack-triage-issue-reports",
+      "path": "integrations/benny/procedures/triage-issue-reports/PROCEDURE.md",
+      "enabled": false
+    }
+  ]
+}

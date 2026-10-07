@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/remolab-fr/pstack-codex-skills/security/advisories/new
+    about: Use private reporting for unsafe instructions, permission bypasses, or data exposure.
